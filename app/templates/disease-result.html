@@ -1,0 +1,72 @@
+
+{% extends 'layout.html' %} {% block body %}
+
+
+<div class="container py-2 mx-auto my-50 h-10 " style="margin: 9rem;">
+  <style>
+    .sups{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 64px;
+    }
+    .sups h2{
+      text-align: center;
+      font-size: 36px;
+      font-weight: 500;
+    }
+    .supplements{
+      display: flex;
+      justify-content: space-around;
+    }
+    .supplements div{
+      width: 50%;
+    }
+    .sup-details{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .sup-details a{
+      padding: 6px 12px;
+      text-decoration: none;
+      background-color: blueviolet;
+      color: white;
+      font-size: 20px;
+    }
+    .sup-details a:hover{
+      background-color: white;
+      color: blueviolet;
+    }
+  </style>
+  <div class="row">
+      <div class="col-sm py-2 py-md-3">
+          <div class="card card-body" style="justify-content: center; background-color:blanchedalmond">
+            <p class="text-center" style="color: black; font-size: 22px;">{{ prediction }}</p>
+
+            <div class="sups">
+              <h2>
+                Supplements Suggestion
+              </h2>
+               
+              <div class="supplements">
+                <div>
+                  <img src="{{d['sup_img']}}" alt="" width="200" height="200">
+                </div>
+  
+                <div class="sup-details">
+                  <p>Supplement Name : {{d["sup_name"]}}</p>
+                  <a href="{{d['sup_link']}}">Buy Here</a>
+                </div>
+              </div>
+                             
+            </div>
+
+          </div>
+      </div>
+
+  </div>
+</div>
+{% endblock %}
